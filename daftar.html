@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar</title>
+    <link rel="stylesheet" href="stylelogin.css" />
+    <script>
+      function handleSubmit(event) {
+          event.preventDefault();
+          const nama = document.getElementById('nama').value;
+          const telepon = document.getElementById('telepon').value;
+          const email = document.getElementById('email').value;
+          const alamat = document.getElementById('alamat').value;
+          const password = document.getElementById('password').value;
+          const ulangiPassword = document.getElementById('ulangi-password').value;
+
+          if (nama && telepon && email && alamat && password && ulangiPassword) {
+              window.location.href = 'login.html';
+          } else {
+              alert('Harap isi semua kolom.');
+          }
+        }
+  </script>
+  </head>
+  <body>
+    <div class="daftar-container">
+        <div class="daftar-box">
+        <div class="daftar-form">
+            <h2>Daftar</h2>
+            <form onsubmit="handleSubmit(event)">
+              <div class="form-grid">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input
+                      type="text"
+                      id="nama"
+                      placeholder="Masukkan Nama Lengkap"
+                      required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="telepon">Nomor Telepon</label>
+                    <input
+                      type="text"
+                      id="telepon"
+                      placeholder="Masukkan Nomor Telepon"
+                      required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="Masukkan Email"
+                      required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <input
+                      type="text"
+                      id="alamat"
+                      placeholder="Masukkan Alamat"
+                      required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="Masukkan Password"
+                      required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Ulangi Password</label>
+                    <input
+                      type="password"
+                      id="confirm-password"
+                      placeholder="Ulangi Password"
+                      required
+                    />      
+                </div>
+            </div>
+            <button type="submit" class="btn">Daftar</button>
+          </form>
+            <p>Sudah punya akun? <a href="login.html">Masuk</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
