@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriGo - panduan penggunaan alat</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="font-sans antialiased bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="assets/logo.png" alt="AgriGo Logo" class="w-36 h-18 mr-3"> 
+        </div>
+        
+        <!-- Main Navigation -->
+        <div class="flex space-x-8 items-center">
+          <a href="index.html" class="text-gray-700 hover:text-green-700">Beranda</a>
+          
+          <!-- Dropdown Layanan -->
+          <div x-data="{ open: false }" class="relative">
+            <button @click="open = !open" class="flex items-center text-gray-700 hover:text-green-700 focus:outline-none">
+              Layanan
+              <svg class="ml-1 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div x-show="open" @click.away="open = false" class="absolute left-0 top-full bg-white shadow-lg rounded w-40 z-10">
+              <a href="advertising.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Advertising</a>
+              <a href="panduanalat.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Panduan Alat</a>
+              <a href="komunitas.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Komunitas</a>
+            </div>
+          </div>
+
+          <a href="produkkami.html" class="text-gray-700 hover:text-green-700">Produk</a>
+          
+          <!-- Dropdown Tentang Kami -->
+          <div x-data="{ open: false }" class="relative">
+            <button @click="open = !open" class="flex items-center text-gray-700 hover:text-green-700 focus:outline-none">
+              Profil Kami
+              <svg class="ml-1 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div x-show="open" @click.away="open = false" class="absolute left-0 top-full bg-white shadow-lg rounded w-60 z-10">
+              <a href="profil.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil Kami</a>
+              <a href="panduanpengguna.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Panduan Pengguna</a>
+            </div>
+          </div>
+
+          <!-- Dropdown Pusat Bantuan -->
+          <div x-data="{ open: false }" class="relative">
+            <button @click="open = !open" class="flex items-center text-gray-700 hover:text-green-700 focus:outline-none">
+              Pusat Bantuan
+              <svg class="ml-1 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div x-show="open" @click.away="open = false" class="absolute left-0 top-full bg-white shadow-lg rounded w-40 z-10">
+              <a href="hubungikami.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Hubungi Kami</a>
+              <a href="faq.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">FAQ</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Masuk Button -->
+        <button class="text-green-700 border border-green-700 px-7 py-2 rounded hover:bg-gray-200">Masuk</button>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Hero Section -->
+ <section class="relative">
+    <img src="assets/baner-1.jpg" alt="Farm" class="w-full h-80 object-cover">
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-start pl-40">
+      <h1 class="text-white text-6xl font-bold">Panduan Penggunaan<br>Alat</h1>
+    </div>
+  </section>
+
+  <!-- Panduan Penggunaan Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-green-800 mb-8">Temukan panduan penggunaan untuk alat anda</h2>
+      <div class="relative mb-8">
+          <input type="text" id="search" placeholder="Cari alat..." class="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+      </div>
+      <div id="product-list" class="grid md:grid-cols-3 lg:grid-cols-5 gap-12">
+          <div class="bg-white p-8 rounded-lg shadow-2xl text-center">
+              <img src="assets/bajak_singkal.png" alt="Bajak Singkal" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Bajak Singkal</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <img src="assets/bajak_sub_soil.png" alt="Bajak Sub Soil" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Bajak Sub Soil</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-xl text-center">
+              <img src="assets/combine_harvester.png" alt="Combine Harvester" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Combine Harvester</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/garu_piring.png" alt="Garu Piring" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Garu Piring</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/garu_sisir.png" alt="Garu Sisir" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Garu Sisir</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/kultivator.png" alt="Kultivator" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Kultivator</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/mesin_penebar_pupuk.png" alt="Mesin Penebar Pupuk" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Mesin Penebar Pupuk</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/mesin_semprot.png" alt="Mesin Semprot" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Mesin Semprot</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/mower.png" alt="Mower" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Mower</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/planter.png" alt="Planter / Seder" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Planter / Seder</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/pompa_irigasi.png" alt="Pompa Irigasi" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Pompa Irigasi</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/rotavator.png" alt="Rotavator" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Rotavator</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/thresher.png" alt="Thresher (Mesin Pemipil)" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Thresher (Mesin Pemipil)</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/traktor_beroda_tunggal.png" alt="Traktor Beroda Tunggal" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Traktor Beroda Tunggal</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <img src="assets/traktor_tangan.png" alt="Traktor Tangan" class="w-full h-40 object-cover mb-4 border border-black">
+              <h3 class="text-lg font-bold text-green-800">Traktor Tangan</h3>
+          </div>
+      </div>
+  </div>
+</section>
+
+<script>
+  const searchInput = document.getElementById('search');
+  const productList = document.getElementById('product-list');
+  const products = productList.getElementsByClassName('bg-white');
+
+  searchInput.addEventListener('input', function() {
+      const filter = searchInput.value.toLowerCase();
+      for (let i = 0; i < products.length; i++) {
+          const productName = products[i].getElementsByTagName('h3')[0].textContent.toLowerCase();
+          if (productName.includes(filter)) {
+              products[i].style.display = "block";
+          } else {
+              products[i].style.display = "none";
+          }
+      }
+  });
+</script>
+
+
+
+  <!-- Footer -->
+  <footer class="text-white py-8" style="background-color: #144a33;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Kolom AgriGo -->
+      <div>
+        <h4 class="text-lg font-bold">AgriGo</h4>
+        <p class="mt-2 text-sm text-justify">
+          Platform iklan rental alat pertanian yang mendukung petani Indonesia dengan akses mudah ke peralatan agrikultur modern. Sewa alat dengan fleksibel, kapan saja sesuai kebutuhan Anda.
+        </p>
+      </div>
+  
+      <div class="md:ml-96">
+        <h4 class="text-lg font-bold rounded w-40 z-10">Tentang Kami</h4>
+        <ul class="mt-2 text-sm space-y-2 rounded w-40 z-10">
+          <li><a href="profil.html" class="hover:underline">Tentang Kami</a></li>
+          <li><a href="panduanpengguna.html" class="hover:underline">Panduan Pengguna</a></li>
+        </ul>
+      </div>
+  
+      <!-- Kolom Layanan -->
+      <div class="md:ml-72">
+        <h4 class="text-lg font-bold">Layanan</h4>
+        <ul class="mt-2 text-sm space-y-2 rounded w-40 z-10">
+          <li><a href="advertising.html" class="hover:underline">Advertising</a></li>
+          <li><a href="panduanalat.html" class="hover:underline">Panduan Alat</a></li>
+          <li><a href="komunitas.html" class="hover:underline">Komunitas</a></li>
+        </ul>
+      </div>
+  
+      <!-- Kolom Pusat Bantuan -->
+      <div class="md:ml-40 rounded w-40 z-10">
+        <h4 class="text-lg font-bold">Pusat Bantuan</h4>
+        <ul class="mt-2 text-sm space-y-2">
+          <li><a href="hubungikami.html" class="hover:underline">Hubungi Kami</a></li>
+          <li><a href="faq.html" class="hover:underline">FAQ</a></li>
+        </ul>
+      </div>
+  
+    </div>
+  
+    <!-- Social Media Icons Section -->
+    <div class="mt-8 flex justify-end px-20 sm:px-6 lg:px-40">
+      <div class="flex space-x-4">
+        <a href="#"><img src="assets/facebook.png" alt="Facebook" class="w-6 h-6"></a>
+        <a href="#"><img src="assets/twitter.png" alt="Twitter" class="w-6 h-6"></a>
+        <a href="#"><img src="assets/instagram.png" alt="Instagram" class="w-6 h-6"></a>
+      </div>
+    </div>
+  </footer>
+  
+    
+  </body>
+  </html>
+  

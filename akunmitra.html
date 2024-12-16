@@ -1,0 +1,553 @@
+<html>
+ <head>
+  <title>
+   Profile Page
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;icon_names=account_circle" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+        background-color: #fff;
+    }
+    .navbar .logo {
+        display: flex;
+        align-items: center;
+    }
+    .navbar .logo img {
+        height: 30px;
+        width: 60px;
+        margin-right: 10px;
+    }
+    .navbar .logo span {
+        font-size: 20px;
+        font-weight: bold;
+        color: #144a33;
+    }
+    .navbar .menu {
+        display: flex;
+        align-items: center;
+    }
+    .navbar .menu a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #0a0a0a;
+        font-size: 16px;
+    }
+    .navbar .menu a:hover {
+        color: #144a33;
+    }
+    .navbar .menu .dropdown {
+        position: relative;
+    }
+    .navbar .menu .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .navbar .menu .dropdown .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .navbar .menu .dropdown .dropdown-content a {
+        padding: 10px 20px;
+        display: block;
+        white-space: nowrap;
+    }
+    .navbar .menu .dropdown .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+    .navbar .material-symbols-outlined {
+        padding: 5px 15px;
+        border: 1px solid #144a33;
+        border-radius: 5px;
+        color: #144a33;
+        text-decoration: none;
+    }
+    .navbar .material-symbols-outlined:hover {
+        background-color: #144a33;
+        color: white;
+    }
+    .containerx {
+        display: flex;
+        min-height: calc(100vh - 80px); /* Adjusted to account for navbar and footer */
+        background-color: #ffffff;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    .sidebarx {
+        width: 200px;
+        height: 85%;
+        background-color: #f0f4f7;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    .sidebarx .profilex {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        color: #007b5e;
+        cursor: pointer;
+    }
+    .sidebarx .profilex img {
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .sidebarx .profilex .name {
+        font-weight: bold;
+        padding: 10px;
+    }
+    .sidebarx .profilex a {
+        color: #19a282;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .sidebarx .profilex a:hover {
+        color: #19a282;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .sidebarx .ad-buttonx {
+        margin-top: 10px;
+    }
+    .sidebarx .ad-buttonx button {
+        background-color: #007b5e;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+    .sidebarx .dividerx {
+        margin: 20px 0;
+        border-bottom: 4px solid #ccc;
+        border-radius: 10;
+    }
+    .sidebarx .menux {
+        list-style: none;
+        padding: 10px;
+    }
+    .sidebarx .menux li {
+        margin: 15px 0;
+        padding: 10px;
+    }
+    .sidebarx .menux li a {
+        text-decoration: none;
+        color: #007b5e;
+        font-weight: bold;
+    }
+    .content6 {
+        flex: 1;
+        padding: 20px;
+        background-color: #f0f4f7;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        height: auto;
+    }
+    .content6 .title6 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #144a33;
+        margin-bottom: 20px;
+    }
+    .content6 .card-container6 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .content6 .card6 {
+        width: 150px;
+        height: 200px;
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #F8FAF9;
+        cursor: pointer;
+        text-align: center;
+        margin: 10px;
+        position: relative;
+    }
+    .content6 .card6 img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 8px;
+    }
+    .content6 .card6 i {
+        font-size: 24px;
+        color: #144a33;
+        margin-bottom: 10px;
+    }
+    .content6 .card6 span {
+        color: #144a33;
+        font-size: 16px;
+    }
+    .content6 .card6 .delete-icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 16px;
+        color: red;
+        cursor: pointer;
+    }
+    .content6 .card6 .edit-icon {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        font-size: 16px;
+        color: blue;
+        cursor: pointer;
+    }
+    .footer {
+        display: flex;
+        justify-content: space-around;
+        padding: 40px 0;
+        background: #144a33;
+    }
+    .footer div {
+        max-width: 200px;
+    }
+    .footer h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .footer p, .footer a {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #fff;
+        text-decoration: none;
+        text-align: left;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    .footer .social-icons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .footer .social-icons a {
+        color: #fff;
+        font-size: 18px;
+        margin: 20px;
+    }
+    .main-container6 {
+        display: none;
+    }
+    .text-container6 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .text-container6 span {
+        margin-left: 10px;
+    }
+    .image-container, .video-container {
+        cursor: pointer;
+    }
+    .image-container, .video-container span{
+        margin-bottom: 100px;
+    }
+    .input-container6 {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .input-container6 label {
+        margin-right: 10px;
+        font-weight: bold;
+        width: 150px; /* Adjust this width as needed */
+    }
+    .input-container6 input, .input-container6 textarea {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .rate-container6 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+    .rate-item6 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    .rate-item6 label {
+        margin-right: 10px;
+        font-weight: bold;
+        width: 100px; /* Adjust this width as needed */
+    }
+    .rate-item6 input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .button-container6 {
+        text-align: right;
+    }
+    .button-container6 button {
+        background-color: #007b5e;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+  </style>
+  <script>
+    function showProductInfo() {
+        document.querySelector('.main-container6').style.display = 'block';
+        document.querySelector('#card6').style.display = 'none';
+        document.querySelector('.title6').textContent = 'Informasi Produk';
+    }
+  </script>
+ </head>
+ <body>
+  <div class="navbar">
+   <div class="logo">
+    <img alt="AGRIGO logo" height="30" src="https://storage.googleapis.com/a1aa/image/ykpVpHl1UP6UDJte5FSVSl3DKOwFCctpXr55Fz51dBfQGN7TA.jpg" width="60"/>
+    <span>
+     AGRIGO
+    </span>
+   </div>
+   <div class="menu">
+    <a href="index.html">
+     Beranda
+    </a>
+    <div class="dropdown">
+     <a href="#">
+      Layanan
+      <i class="fas fa-caret-down">
+      </i>
+     </a>
+     <div class="dropdown-content">
+      <a href="advertising.html">
+       Advertising
+      </a>
+      <a href="panduan.html">
+       Panduan Alat
+      </a>
+      <a href="komunitas.html">
+       Komunitas
+      </a>
+     </div>
+    </div>
+    <a href="produkkami.html">
+     Produk
+    </a>
+    <div class="dropdown">
+     <a href="#">
+      Tentang Kami
+      <i class="fas fa-caret-down">
+      </i>
+     </a>
+     <div class="dropdown-content">
+      <a href="profilkami.html">
+       Profil Kami
+      </a>
+      <a href="panduanpengguna.html">
+       Panduan Pengguna
+      </a>
+     </div>
+    </div>
+    <div class="dropdown">
+     <a href="#">
+      Pusat Bantuan
+      <i class="fas fa-caret-down">
+      </i>
+     </a>
+     <div class="dropdown-content">
+      <a href="faq.html">
+       FAQ
+      </a>
+      <a href="hubungikami.html">
+       Hubungi Kami
+      </a>
+     </div>
+    </div>
+   </div>
+   <a class="material-symbols-outlined" href="profilpage.html">
+    account_circle
+   </a>
+  </div>
+  <div class="containerx">
+   <div class="sidebarx">
+    <div class="profilex">
+     <img alt="Profile Picture" height="50" id="profilePicture" src="https://storage.googleapis.com/a1aa/image/7Q4CcDT1nBboGNyYLhFsL8WT9FNT0bhh6tWjcB2tU1bjRzeJA.jpg" width="50">
+      <div>
+       <div class="namex" id="profile-name">
+        Fredy
+       </div>
+       <a href="profilpage.html">
+        Ubah Profil
+       </a>
+      </div>
+     </img>
+    </div>
+    <a class="ad-buttonx" href="mulaiiklan.html">
+     <button>
+      Mulai Iklan
+     </button>
+    </a>
+    <div class="dividerx">
+    </div>
+    <ul class="menux">
+     <li>
+      <a href="pengaturanakun.html">
+       Pengaturan Akun
+      </a>
+     </li>
+     <li>
+      <a href="notif.html">
+       Notifikasi
+      </a>
+     </li>
+     <li>
+      <a href="pusat.html">
+       Pusat Bantuan
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="content6">
+    <div class="title6" id="title6">
+     Produk Iklan
+    </div>
+    <div class="card-container6" id="card-container6">
+     <div class="card6" id="card6" onclick="showProductInfo()">
+      <i class="fas fa-plus">
+      </i>
+      <span>
+       Tambah Produk Iklan
+      </span>
+     </div>
+    </div>
+    <div class="main-container6">
+     <div class="right-container6">
+      <div class="text-container6">
+       <label for="image-input">
+        Foto Produk
+       </label>
+       <span>
+        <label class="image-container" for="image-input">
+         <img alt="Gambar Produk" height="200" id="product-image" src="https://storage.googleapis.com/a1aa/image/hByfa33Nlfo290BNygfmqcdxUJT5v4DhqDbwMXssKZhZMa2nA.jpg" width="150"/>
+         <span>
+          Tambah Foto
+         </span>
+        </label>
+       </span>
+      </div>
+      <input id="image-input" onchange="updateImage()" type="file"/>
+      <div class="text-container6">
+       <label for="video-input">
+        Video Produk
+       </label>
+       <span>
+        <label class="video-container" for="video-input">
+         <img alt="Gambar Video" height="200" id="video-image" src="https://storage.googleapis.com/a1aa/image/SrfoBWSySl1aOiQuCeDUFHwMBD0Zjj7oOsVBn7KBvEcPGN7TA.jpg" width="150"/>
+         <span>
+          Tambah Video
+         </span>
+        </label>
+       </span>
+      </div>
+      <input accept="video/mp4" id="video-input" onchange="updateVideo()" type="file"/>
+     </div>
+     <div class="left-container6" style="margin: 0 auto;">
+      <div class="input-container6">
+       <label for="product-name">
+        Nama Produk
+       </label>
+       <input id="product-name" placeholder="Masukkan nama produk" type="text"/>
+      </div>
+      <div class="input-container6">
+       <label for="product-description">
+        Deskripsi Produk
+       </label>
+       <textarea id="product-description" placeholder="Masukkan deskripsi produk"></textarea>
+      </div>
+      <div class="rate-container6">
+       <div class="rate-item6">
+        <label for="daily-rate">
+         Harian
+        </label>
+        <input id="daily-rate" type="text" value="Rp. 150.000"/>
+       </div>
+       <div class="rate-item6">
+        <label for="weekly-rate">
+         Mingguan
+        </label>
+        <input id="weekly-rate" type="text" value="Rp. 500.000"/>
+       </div>
+       <div class="rate-item6">
+        <label for="monthly-rate">
+         Bulanan
+        </label>
+        <input id="monthly-rate" type="text" value="Rp. 1.000.000"/>
+       </div>
+      </div>
+      <div class="button-container6">
+       <button onclick="createAd()">
+        Buatkan Iklan
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="footer">
+    <div>
+        <h3>AgriGo</h3>
+        <p>Platform iklan rental alat pertanian yang mendukung petani Indonesia dengan akses mudah ke peralatan agrikultur modern. Sewa alat dengan fleksibel, kapan saja sesuai kebutuhan Anda.</p>
+    </div>
+    <div>
+        <h3>Tentang Kami</h3>
+        <p><a href="profil kami.html">Profil Kami</a></p>
+        <p><a href="#">Panduan Pengguna</a></p>
+    </div>
+    <div>
+        <h3>Layanan</h3>
+        <p><a href="#">Advertising</a></p>
+        <p><a href="#">Panduan Alat</a></p>
+        <p><a href="komunitas.html">Komunitas</a></p>
+    </div>
+    <div>
+        <h3>Pusat Bantuan</h3>
+        <p><a href="#">Hubungi Kami</a></p>
+        <p><a href="#">FAQ</a></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-𝕏 twitter">𝕏</i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+  </div>
+ </body>
+</html>

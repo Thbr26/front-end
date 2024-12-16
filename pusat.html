@@ -1,0 +1,289 @@
+<html>
+<head>
+    <title>Pusat Bantuan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_circle" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+     function showFAQ() {
+            document.getElementById('faq-section').style.display = 'block';
+            document.getElementById('contact-section').style.display = 'none';
+            document.querySelector('.tabs .active').classList.remove('active');
+            document.querySelector('.tabs .tab:nth-child(1)').classList.add('active');
+        }
+
+        function showContact() {
+            document.getElementById('faq-section').style.display = 'none';
+            document.getElementById('contact-section').style.display = 'block';
+            document.querySelector('.tabs .active').classList.remove('active');
+            document.querySelector('.tabs .tab:nth-child(2)').classList.add('active');
+        }
+
+        function toggleFAQ(element) {
+            var content = element.querySelector('.faq-content');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                element.querySelector('i').classList.remove('fa-chevron-up');
+                element.querySelector('i').classList.add('fa-chevron-down');
+            } else {
+                content.style.display = "block";
+                element.querySelector('i').classList.remove('fa-chevron-down');
+                element.querySelector('i').classList.add('fa-chevron-up');
+            }
+        }
+     </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+         <img alt="AGRIGO logo" src="img/Logo Massive_20241101_200750_0000.png">
+         <span>
+          AGRIGO
+         </span>
+        </div>
+        <div class="menu">
+         <a href="index.html">
+          Beranda
+         </a>
+         <div class="dropdown">
+          <a href="#">
+           Layanan
+           <i class="fas fa-caret-down">
+           </i>
+          </a>
+          <div class="dropdown-content">
+            <a href="advertising.html">
+              Advertising
+             </a>
+             <a href="panduan">
+              Panduan Alat
+             </a>
+             <a href= "komunitas.html">
+              Komunitas
+             </a>
+          </div>
+         </div>
+         <a href="produkkami.html">
+          Produk
+         </a>
+         <div class="dropdown">
+          <a href="#">
+           Tentang Kami
+           <i class="fas fa-caret-down">
+           </i>
+          </a>
+          <div class="dropdown-content">
+            <a href="profil kami.html">
+              Profil Kami
+             </a>
+             <a href="panduanpengguna.html">
+              Panduan Pengguna
+             </a>
+          </div>
+         </div>
+         <div class="dropdown">
+          <a href="#">
+           Pusat Bantuan
+           <i class="fas fa-caret-down">
+           </i>
+          </a>
+          <div class="dropdown-content">
+            <a href="faq.html">
+              FAQ
+             </a>
+             <a href="hubungikami.html">
+              Hubungi Kami
+             </a>
+          </div>
+         </div>
+        </div>
+        <a class="material-symbols-outlined" href="profilpage.html">
+            account_circle
+            </a>
+       </div>
+    </div>
+    <div class="containerx">
+        <div class="sidebarx">
+            <div class="profilex">
+             <img alt="Profile Picture" id="profilePicture" height="50" src="" width="50"/>
+             <div>
+              <div id="profile-name" class="namex">
+               Fredy
+              </div>
+              <a href="profilpage.html">
+                Ubah Profil
+               </a>
+             </div>
+            </div>
+            <a href="mulaiiklan.html" class="ad-buttonx">
+             <button>
+              Mulai Iklan
+             </button>
+            </a>
+            <div class="dividerx">
+            </div>
+            <ul class="menux">
+             <li>
+              <a href="pengaturanakun.html">
+               Pengaturan Akun
+              </a>
+             </li>
+             <li>
+              <a href="notif.html">
+               Notifikasi
+              </a>
+             </li>
+             <li>
+              <a href="pusat.html">
+               Pusat Bantuan
+              </a>
+             </li>
+            </ul>
+           </div>
+           <div class="content4">
+            <h1>
+             Pusat Bantuan
+            </h1>
+            <div class="tabs">
+             <div class="tab active" onclick="showFAQ()">
+              FAQ
+             </div>
+             <div class="tab" onclick="showContact()">
+              Hubungi Kami
+             </div>
+            </div>
+            <div id="faq-section">
+             <div class="faq-item" onclick="toggleFAQ(this)">
+              <span>
+               Apa saja jenis alat pertanian yang bisa disewa?
+              </span>
+              <i class="fas fa-chevron-down" style="display: flex;">
+              </i>
+              <div class="faq-content">
+               <p>
+                1: Jenis alat pertanian yang bisa disewa meliputi traktor, mesin pemanen, alat penyemprot, dan lain-lain.
+               </p>
+               <p>
+                2: Jenis alat pertanian yang bisa disewa meliputi traktor, mesin pemanen, alat penyemprot, dan lain-lain.
+               </p>
+              </div>
+             </div>
+             <div class="faq-item" onclick="toggleFAQ(this)">
+              <span>
+               Bagaimana cara melakukan pemesanan alat pertanian?
+              </span>
+              <i class="fas fa-chevron-down" style="display: flex;">
+              </i>
+              <div class="faq-content">
+               <p>
+                1: Anda dapat melakukan pemesanan melalui website kami atau menghubungi layanan pelanggan.
+               </p>
+               <p>
+                2: Anda dapat melakukan pemesanan melalui website kami atau menghubungi layanan pelanggan.
+               </p>
+              </div>
+             </div>
+             <div class="faq-item" onclick="toggleFAQ(this)">
+              <span>
+               Apa ada syarat khusus untuk memesan alat?
+              </span>
+              <i class="fas fa-chevron-down" style="display: flex;">
+              </i>
+              <div class="faq-content">
+               <p>
+                1: Syarat khusus untuk memesan alat termasuk memiliki identitas yang valid dan menyetujui syarat dan ketentuan kami.
+               </p>
+               <p>
+                2: Syarat khusus untuk memesan alat termasuk memiliki identitas yang valid dan menyetujui syarat dan ketentuan kami.
+               </p>
+              </div>
+             </div>
+             <div class="faq-item" onclick="toggleFAQ(this)">
+              <span>
+               Berapa lama durasi penyewaan?
+              </span>
+              <i class="fas fa-chevron-down" style="display: flex;">
+              </i>
+              <div class="faq-content">
+               <p>
+                1: Durasi penyewaan bervariasi mulai dari harian, mingguan, hingga bulanan.
+               </p>
+               <p>
+                2: Durasi penyewaan bervariasi mulai dari harian, mingguan, hingga bulanan.
+               </p>
+              </div>
+             </div>
+             <div class="faq-item" onclick="toggleFAQ(this)">
+              <span>
+               Apa yang harus dilakukan ketika alat mengalami kerusakan?
+              </span>
+              <i class="fas fa-chevron-down" style="display: flex;">
+              </i>
+              <div class="faq-content">
+               <p>
+                1: Jika alat mengalami kerusakan, segera hubungi layanan pelanggan kami untuk mendapatkan bantuan lebih lanjut.
+               </p>
+               <p>
+                2: Jika alat mengalami kerusakan, segera hubungi layanan pelanggan kami untuk mendapatkan bantuan lebih lanjut.
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="contact-info" id="contact-section">
+             <div class="box">
+              <div class="label">
+               Email:
+              </div>
+              <p>
+               AgriGo@gmail.com
+              </p>
+             </div>
+             <div class="box">
+              <div class="label">
+               WhatsApp:
+              </div>
+              <p>
+               +628798654345
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+    <div class="footer">
+        <div>
+            <h3>AgriGo</h3>
+            <p>Platform iklan rental alat pertanian yang mendukung petani Indonesia dengan akses mudah ke peralatan agrikultur modern. Sewa alat dengan fleksibel, kapan saja sesuai kebutuhan Anda.</p>
+        </div>
+        <div>
+            <h3>Tentang Kami</h3>
+            <p><a href="profil kami.html">Profil Kami</a></p>
+            <p><a href="panduanpengguna.html">Panduan Pengguna</a></p>
+        </div>
+        <div>
+            <h3>Layanan</h3>
+            <p><a href="advertising.html">Advertising</a></p>
+            <p><a href="panduanalat.html">Panduan Alat</a></p>
+            <p><a href="komunitas.html">Komunitas</a></p>
+        </div>
+        <div>
+            <h3>Pusat Bantuan</h3>
+            <p><a href="#">Hubungi Kami</a></p>
+            <p><a href="#">FAQ</a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-𝕏 twitter">𝕏</i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+      </div>
+</body>
+</html>

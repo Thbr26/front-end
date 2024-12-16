@@ -1,0 +1,297 @@
+<html>
+<head>
+    <title>Pengaturan Akun</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_circle" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+      let currentPassword = '************';
+
+function editAccount() {
+    document.getElementById('account-info').classList.add('hidden');
+    document.getElementById('edit-account-info').classList.remove('hidden');
+    document.getElementById('edit-button').classList.add('hidden');
+    document.getElementById('save-button').classList.remove('hidden');
+    document.getElementById('close-button').classList.remove('hidden');
+    document.getElementById('page-title').innerText = 'Edit Informasi Akun';
+}
+
+function saveAccount() {
+    var username = document.getElementById('edit-username').value;
+    var phone = document.getElementById('edit-phone').value;
+    var email = document.getElementById('edit-email').value;
+    var oldPassword = document.getElementById('edit-old-password').value;
+    var newPassword = document.getElementById('edit-new-password').value;
+
+    if (newPassword.length < 6) {
+        alert('Password baru harus terisi minimal 6 huruf/angka');
+        return;
+    }
+
+    if (newPassword === currentPassword) {
+        alert('Password baru tidak boleh sama dengan password lama');
+        return;
+    }
+
+    if (oldPassword === currentPassword) {
+        document.getElementById('username').innerText = username;
+        document.getElementById('phone').innerText = phone;
+        document.getElementById('email').innerText = email;
+        document.getElementById('password').innerText = '*'.repeat(newPassword.length);
+
+        currentPassword = newPassword ? newPassword : currentPassword;
+
+        document.getElementById('profile-name').innerText = username;
+
+        document.getElementById('account-info').classList.remove('hidden');
+        document.getElementById('edit-account-info').classList.add('hidden');
+        document.getElementById('edit-button').classList.remove('hidden');
+        document.getElementById('save-button').classList.add('hidden');
+        document.getElementById('close-button').classList.add('hidden');
+        document.getElementById('page-title').innerText = 'Pengaturan Akun';
+    } else {
+        alert('Password lama salah');
+    }
+}
+
+function closeEdit() {
+    document.getElementById('account-info').classList.remove('hidden');
+    document.getElementById('edit-account-info').classList.add('hidden');
+    document.getElementById('edit-button').classList.remove('hidden');
+    document.getElementById('save-button').classList.add('hidden');
+    document.getElementById('close-button').classList.add('hidden');
+    document.getElementById('page-title').innerText = 'Pengaturan Akun';
+}
+
+function confirmDelete() {
+    document.getElementById('deleteModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('deleteModal').style.display = 'none';
+}
+
+function deleteAccount() {
+    alert('Akun berhasil dihapus');
+    closeModal();
+    window.location.href = 'login.html';
+}
+     </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+         <img alt="AGRIGO logo" src="img/Logo Massive_20241101_200750_0000.png">
+         <span>
+          AGRIGO
+         </span>
+        </div>
+        <div class="menu">
+         <a href="index.html">
+          Beranda
+         </a>
+         <div class="dropdown">
+          <a href="#">
+           Layanan
+           <i class="fas fa-caret-down">
+           </i>
+          </a>
+          <div class="dropdown-content">
+            <a href="advertising.html">
+              Advertising
+             </a>
+             <a href="panduan">
+              Panduan Alat
+             </a>
+             <a href= "komunitas.html">
+              Komunitas
+             </a>
+          </div>
+         </div>
+         <a href="produkkami.html">
+          Produk
+         </a>
+         <div class="dropdown">
+          <a href="#">
+           Tentang Kami
+           <i class="fas fa-caret-down">
+           </i>
+          </a>
+          <div class="dropdown-content">
+            <a href="profil kami.html">
+              Profil Kami
+             </a>
+             <a href="panduanpengguna.html">
+              Panduan Pengguna
+             </a>
+          </div>
+         </div>
+         <div class="dropdown">
+          <a href="#">
+           Pusat Bantuan
+           <i class="fas fa-caret-down">
+           </i>
+          </a>
+          <div class="dropdown-content">
+            <a href="faq.html">
+              FAQ
+             </a>
+             <a href="hubungikami.html">
+              Hubungi Kami
+             </a>
+          </div>
+         </div>
+        </div>
+        <a class="material-symbols-outlined" href="profilpage.html">
+            account_circle
+            </a>
+       </div>
+    </div>
+    <div class="containerx">
+        <div class="sidebarx">
+            <div class="profilex">
+             <img alt="Profile Picture" id="profilePicture" height="50" src="" width="50"/>
+             <div>
+              <div id="profile-name" class="namex">
+               Fredy
+              </div>
+              <a href="profilpage.html">
+                Ubah Profil
+               </a>
+             </div>
+            </div>
+            <a href="mulaiiklan.html" class="ad-buttonx">
+             <button>
+              Mulai Iklan
+             </button>
+            </a>
+            <div class="dividerx">
+            </div>
+            <ul class="menux">
+             <li>
+              <a href="pengaturanakun.html">
+               Pengaturan Akun
+              </a>
+             </li>
+             <li>
+              <a href="notif.html">
+               Notifikasi
+              </a>
+             </li>
+             <li>
+              <a href="pusat.html">
+               Pusat Bantuan
+              </a>
+             </li>
+            </ul>
+           </div>
+             <div class="contentx">
+                <div class="main-contentx">
+                    <div class="headerx">
+                        <h2 id="page-title">Pengaturan Akun</h2>
+                        <button class="close-button hidden" id="close-button" onclick="closeEdit()"><i class="fas fa-times"></i></button>
+                    </div>
+                    <hr>
+                    <div class="container-akun">
+                        <div>
+                            <div class="info-akun">Akun dan Keamanan</div>
+                            <div class="kotak-info" id="account-info">
+                                <div id="username">Fredy123</div>
+                                <div id="phone">+628798654345</div>
+                                <div id="email">Freddy@gmail.com</div>
+                                <div id="password">************</div>
+                            </div>
+                            <div class="hidden" id="edit-account-info">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="edit-username">Username</label>
+                                        <input id="edit-username" type="text" value="Fredy123"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="edit-old-password">Old Password</label>
+                                        <input id="edit-old-password" type="password"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="edit-phone">Phone</label>
+                                        <input id="edit-phone" type="text" value="+628798654345"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="edit-new-password">New Password</label>
+                                        <input id="edit-new-password" type="password"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-email">Email</label>
+                                    <input id="edit-email" type="email" value="Freddy@gmail.com"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tombol">
+                            <button id="edit-button" onclick="editAccount()">Ubah</button>
+                            <button class="hidden" id="save-button" onclick="saveAccount()">Simpan</button>
+                        </div>
+                    </div>
+                    <div class="container-akun">
+                        <div class="info-akun">Hapus Akun</div>
+                        <div class="tombol">
+                            <button onclick="confirmDelete()">Hapus</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+    </div>
+    </div>
+    <div class="footer">
+        <div>
+            <h3>AgriGo</h3>
+            <p>Platform iklan rental alat pertanian yang mendukung petani Indonesia dengan akses mudah ke peralatan agrikultur modern. Sewa alat dengan fleksibel, kapan saja sesuai kebutuhan Anda.</p>
+        </div>
+        <div>
+            <h3>Tentang Kami</h3>
+            <p><a href="profil kami.html">Profil Kami</a></p>
+            <p><a href="panduanpengguna.html">Panduan Pengguna</a></p>
+        </div>
+        <div>
+            <h3>Layanan</h3>
+            <p><a href="advertising.html">Advertising</a></p>
+            <p><a href="panduanalat.html">Panduan Alat</a></p>
+            <p><a href="komunitas.html">Komunitas</a></p>
+        </div>
+        <div>
+            <h3>Pusat Bantuan</h3>
+            <p><a href="#">Hubungi Kami</a></p>
+            <p><a href="#">FAQ</a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-𝕏 twitter">𝕏</i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+      </div>
+      <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Konfirmasi Hapus Akun</h2>
+                <button class="close-button" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <p>Anda yakin ingin menghapus akun ini?</p>
+            <div class="modal-footer">
+                <button onclick="deleteAccount()">Iya</button>
+                <button onclick="closeModal()">Batal</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

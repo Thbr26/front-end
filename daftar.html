@@ -6,21 +6,33 @@
     <title>Daftar</title>
     <link rel="stylesheet" href="stylelogin.css" />
     <script>
-      function handleSubmit(event) {
-          event.preventDefault();
-          const nama = document.getElementById('nama').value;
-          const telepon = document.getElementById('telepon').value;
-          const email = document.getElementById('email').value;
-          const alamat = document.getElementById('alamat').value;
-          const password = document.getElementById('password').value;
-          const ulangiPassword = document.getElementById('ulangi-password').value;
+     function handleSubmit(event) {
+        event.preventDefault();
+        const nama = document.getElementById('nama').value;
+        const telepon = document.getElementById('telepon').value;
+        const email = document.getElementById('email').value;
+        const alamat = document.getElementById('alamat').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
 
-          if (nama && telepon && email && alamat && password && ulangiPassword) {
-              window.location.href = 'login.html';
+        if (nama && telepon && email && alamat && password && confirmPassword) {
+          if (password === confirmPassword) {
+            const user = {
+              nama,
+              telepon,
+              email,
+              alamat,
+              password
+            };
+            localStorage.setItem('user', JSON.stringify(user));
+            window.location.href = 'login.html';
           } else {
-              alert('Harap isi semua kolom.');
+            alert('Password dan Ulangi Password tidak cocok.');
           }
+        } else {
+          alert('Harap isi semua kolom.');
         }
+      }
   </script>
   </head>
   <body>
@@ -85,7 +97,7 @@
                     />      
                 </div>
             </div>
-            <button type="submit" class="btn">Daftar</button>
+            <button type="submit"  class="btn">Daftar</button>
           </form>
             <p>Sudah punya akun? <a href="login.html">Masuk</a></p>
         </div>

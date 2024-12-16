@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masuk</title>
     <link rel="stylesheet" href="stylelogin.css">
+    <script>
+        function handleLogin(event) {
+          event.preventDefault();
+          const email = document.getElementById('fullname').value;
+          const password = document.getElementById('password').value;
+  
+          const storedUser = JSON.parse(localStorage.getItem('user'));
+  
+          if (storedUser && storedUser.email === email && storedUser.password === password) {
+            alert('Login berhasil!');
+            window.location.href = 'homepage.html';
+          } else {
+            alert('Email atau password salah.');
+          }
+        }
+      </script>
 </head>
 <body>
 
@@ -12,8 +28,8 @@
         <div class="login-box">
             <div class="login-form">
                 <h2>Masuk</h2>
-                <form>
-                    <label for="fullname">Nama Lengkap</label>
+                <form onsubmit="handleLogin(event)">
+                    <label for="fullname">Email</label>
                     <input type="text" id="fullname" placeholder="Masukkan Nama Lengkap">
                     
                     <label for="password">Password</label>
@@ -25,9 +41,8 @@
                     </div>
                     
                     <button type="submit">Login</button>
-                    
-                    <p>Belum punya akun? <a href="daftar.html">Daftar</a></p>
                 </form>
+                    <p>Belum punya akun? <a href="daftar.html">Daftar</a></p>
             </div>
             <div class="login-image">
                 <img src="img/log.jpg" alt="Illustration">
